@@ -12,7 +12,7 @@ const Loader = () => {
           fontWeight: 800,
           marginTop: 40
         }
-        }>{progress.toFixed(2)}%</p>
+        }>interactive portfolio loading... {progress.toFixed(2)}%</p>
       </span>
     </Html>
   )
