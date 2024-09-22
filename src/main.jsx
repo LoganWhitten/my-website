@@ -5,8 +5,6 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<div className='text-white z-50 text-center flex bg-black w-screen h-screen'>hey girl</div>}>
-      <MyThree />
-    </Suspense>
+    <MyThree />
   </React.StrictMode>,
 )

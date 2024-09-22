@@ -1,76 +1,47 @@
+import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
-import { useEffect, useRef } from "react";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const MyThree = () => {
+  const refContainer = useRef();
 
-
-function MyThree() {
-  const refContainer = useRef(null);
   useEffect(() => {
-    // === THREE.JS CODE START ===
-    const manager = new THREE.LoadingManager();
-    manager.onStart = function (url, itemsLoaded, itemsTotal) {
-      console.log('Started loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    };
-
-    manager.onLoad = function () {
-      console.log('Loading complete!');
-    };
-
-    manager.onProgress = function (url, itemsLoaded, itemsTotal) {
-      console.log('Loading file: ' + url + '.\nLoaded ' + itemsLoaded + ' of ' + itemsTotal + ' files.');
-    };
-
-    manager.onError = function (url) {
-      console.log('There was an error loading ' + url);
-    };
-
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    var renderer = new THREE.WebGLRenderer();
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // document.body.appendChild( renderer.domElement );
-    // use ref as a mount point of the Three.js scene instead of the document.body
-    refContainer.current && refContainer.current.appendChild(renderer.domElement);
+    refContainer.current.appendChild(renderer.domElement);
+    const controls = new OrbitControls(camera, renderer.domElement);
+
 
     const pointLight = new THREE.PointLight(0xffffff, 50);
     pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, .25);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.25);
     scene.add(ambientLight);
 
-
-    const loader = new GLTFLoader( manager );
+    const loader = new GLTFLoader();
     loader.load('./FVDUMP.gltf', function (gltf) {
-
       scene.add(gltf.scene);
-
-    }, undefined, function (error) {
-
-      console.error(error);
-
     });
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    
-    camera.position.y = 25;
-    camera.rotation.x = 4.75;
-
-    var animate = function () {
+    camera.position.y = 20;
+    camera.rotateOnAxis(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
+    const animate = () => {
       requestAnimationFrame(animate);
-      controls.update();
       renderer.render(scene, camera);
-
     };
     animate();
+
+    return () => {
+      // Cleanup on component unmount
+      refContainer.current.removeChild(renderer.domElement);
+    };
   }, []);
-  return (
 
-    <div ref={refContainer}></div>
+  return <div ref={refContainer} />;
+};
 
-  );
-}
-
-export default MyThree
+export default MyThree;
