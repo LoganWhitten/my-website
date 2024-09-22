@@ -54,14 +54,15 @@ function MyThree() {
     });
 
     const controls = new OrbitControls(camera, renderer.domElement);
-
+    
     camera.position.y = 25;
     camera.rotation.x = 4.75;
 
     var animate = function () {
       requestAnimationFrame(animate);
-
+      controls.update();
       renderer.render(scene, camera);
+
     };
     animate();
   }, []);
