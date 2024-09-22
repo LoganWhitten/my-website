@@ -30,7 +30,7 @@ scene.add(ambientLight);
 
 
 const loader = new GLTFLoader();
-loader.load('/FVDUMP.gltf', function (gltf) {
+loader.load('./FVDUMP.gltf', function (gltf) {
   
   scene.add(gltf.scene);
   console.log('Success');
