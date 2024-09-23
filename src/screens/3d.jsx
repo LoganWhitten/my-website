@@ -17,25 +17,24 @@ const MyThree = () => {
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         refContainer.current.appendChild(renderer.domElement);
-        const controls = new OrbitControls(camera, renderer.domElement);
+        //const controls = new OrbitControls(camera, renderer.domElement);
 
         const pointLight = new THREE.PointLight(0xffffff, 50);
         pointLight.position.set(0, 0, 0);
         scene.add(pointLight);
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.25);
-        scene.add(ambientLight);
 
         const loader = new GLTFLoader();
-        loader.load("./models/FVDUMP.gltf", function (gltf) {
+        loader.load("./models/LLL.gltf", function (gltf) {
             scene.add(gltf.scene);
         });
 
-        camera.position.y = 25;
-        camera.rotateOnAxis(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
+        camera.position.set(0.1348384787727985, 2.237098333534017, 2.061347740416085);
+        camera.rotation.set(0.019253660622957067, 0,0);
         const animate = () => {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
+            console.log(camera.rotation);
         };
         animate();
 
