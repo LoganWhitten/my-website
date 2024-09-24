@@ -11,9 +11,13 @@ p1 {
 }
 
 a{
-  @apply bg-green-900 bg-opacity-50 hover:underline cursor-pointer rounded-sm p-1;
+  @apply bg-green-200 outline bg-opacity-50 hover:underline cursor-pointer rounded-sm p-1;
 }
 
 portfolio-tile {
   @apply bg-gray-800 p-4 rounded-md aspect-square object-cover;
+}
+
+.page {
+  @apply h-screen px-32 bg-blend-difference grid place-items-center text-center place-content-center gap-2 leading-loose z-10
 }

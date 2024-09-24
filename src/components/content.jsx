@@ -4,7 +4,7 @@ import LightingDesign from "../screens/lighting_design";
 
 const Content = () => {
     return (
-        <div class="min-h-screen w-1/2 grid place-items-center absolute z-10">
+        <div class="min-h-screen w-screen self-center grid place-items-center absolute z-10">
             <About />
             <LightingDesign />
             <Electrics />

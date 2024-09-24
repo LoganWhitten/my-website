@@ -1,8 +1,7 @@
 const LightingDesign = () => {
     return (
-        <div class="h-screen w-screen">
-            <div className=" grid mx-32 place-items-center place-content-center">
-                <div className="grid place-content-center gap-2 leading-loose">
+        <div class="h-screen">
+                <div className="h-screen px-32 bg-blend-difference grid place-items-center text-center place-content-center gap-2 leading-loose z-10">
                     <h1>lighting design</h1>
                     <p1>click on a photo to learn more!</p1>
                     <div class="grid grid-cols-4 gap-3 ">
@@ -14,7 +13,6 @@ const LightingDesign = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 

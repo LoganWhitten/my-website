@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-const MyThree = () => {
+const MyThree = ({scrollPosition}) => {
     const refContainer = useRef();
 
     useEffect(() => {
@@ -23,9 +23,10 @@ const MyThree = () => {
         function moveCamera() {
             const t = document.body.getBoundingClientRect().top;
             camera.position.z = t * -0.01 - 3;
+            console.log(i);
         }
 
-        document.body.onscroll = moveCamera;
+        window.addEventListener("scroll", moveCamera);
 
         const pointLight = new THREE.PointLight(0xffffff, 50);
         pointLight.position.set(0, 0, 0);
@@ -43,6 +44,7 @@ const MyThree = () => {
         const animate = () => {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
+            camera.rotation.y += 0.001;
         };
         animate();
 
@@ -52,7 +54,15 @@ const MyThree = () => {
         };
     }, []);
 
-    return <div className="absolute h-screen w-screen z-0" ref={refContainer} />;
+    useEffect(() => {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = scrollPosition / maxScroll;
+
+        console.log(scrollProgress);
+    }, [scrollPosition]);
+
+    return <div className=" h-screen w-screen bg-black" ref={refContainer} />;
 };
+
 
 export default MyThree;
