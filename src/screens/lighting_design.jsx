@@ -1,6 +1,6 @@
 const LightingDesign = () => {
     return (
-        <div class=" min-h-screen w-screen bg-black">
+        <div class="h-screen w-screen">
             <div className=" grid mx-32 place-items-center place-content-center">
                 <div className="grid place-content-center gap-2 leading-loose">
                     <h1>lighting design</h1>

@@ -10,14 +10,22 @@ const MyThree = () => {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(
             75,
-            window.innerWidth / window.innerHeight,
+            window.innerWidth / (window.innerHeight),
             0.1,
             1000
         );
+
+
         const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, (window.innerHeight));
         refContainer.current.appendChild(renderer.domElement);
         //const controls = new OrbitControls(camera, renderer.domElement);
+        function moveCamera() {
+            const t = document.body.getBoundingClientRect().top;
+            camera.position.z = t * -0.01 - 3;
+        }
+
+        document.body.onscroll = moveCamera;
 
         const pointLight = new THREE.PointLight(0xffffff, 50);
         pointLight.position.set(0, 0, 0);
@@ -29,12 +37,12 @@ const MyThree = () => {
             scene.add(gltf.scene);
         });
 
-        camera.position.set(0.1348384787727985, 2.237098333534017, 2.061347740416085);
+        camera.position.set(0.14, 2.237098333534017, -3);
         camera.rotation.set(0.019253660622957067, 0,0);
+        camera.position.setY(2);
         const animate = () => {
             requestAnimationFrame(animate);
             renderer.render(scene, camera);
-            console.log(camera.rotation);
         };
         animate();
 
@@ -44,7 +52,7 @@ const MyThree = () => {
         };
     }, []);
 
-    return <div ref={refContainer} />;
+    return <div className="absolute h-screen w-screen z-0" ref={refContainer} />;
 };
 
 export default MyThree;

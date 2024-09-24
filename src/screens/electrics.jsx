@@ -1,6 +1,6 @@
 const Electrics = () => {
     return (
-        <div class=" min-h-screen w-screen bg-black">
+        <div class=" min-h-screen w-screen">
             <div className=" grid mx-32 place-items-center place-content-center">
                 <div className="grid place-content-center gap-2 leading-loose">
                     <h1>stage electrics</h1>
