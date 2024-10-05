@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-const MyThree = ({scrollPosition}) => {
+const MyThree = () => {
     const refContainer = useRef();
 
     useEffect(() => {
@@ -53,13 +53,6 @@ const MyThree = ({scrollPosition}) => {
             refContainer.current.removeChild(renderer.domElement);
         };
     }, []);
-
-    useEffect(() => {
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress = scrollPosition / maxScroll;
-
-        console.log(scrollProgress);
-    }, [scrollPosition]);
 
     return <div className=" h-screen w-screen bg-black" ref={refContainer} />;
 };

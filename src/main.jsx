@@ -24,7 +24,7 @@ const Main = () => {
       <div className="relative h-screen">
         {/* Bottom Div (Non-scrollable) */}
         <div className="absolute inset-0 z-0">
-          <MyThree scrollPosition={scrollPosition} />
+          <MyThree />
         </div>
 
         {/* Top Div (Scrollable) */}
