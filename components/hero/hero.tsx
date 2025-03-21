@@ -64,7 +64,7 @@ const Hero = () => {
 
   return (
     <div
-      className="flex w-full h-full min-h-[600px] justify-center items-center bg-black overflow-hidden"
+      className="flex w-full h-full min-h-[600px] justify-center items-center overflow-hidden"
       ref={scope}
     >
       <motion.div

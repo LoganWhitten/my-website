@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ClientHeader from '../components/ClientHeader';
 import "./globals.css";
+import ClientFooter from "../components/footer";
 
 export const metadata: Metadata = {
   title: "Logan Whitten's Website",
@@ -14,17 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-calendas h-lvh pb-10">
+      <body className="font-calendas h-lvh">
+        <ClientHeader />
         <div className="h-full w-screen">{children}</div>
-        <footer className="absolute z-50 w-screen text-center flex gap-1 h-10 place-items-center place-content-center font-calendas italic text-gray-400 text-sm">
-          © {new Date().getFullYear()}
-          <a
-            className="hover:underline"
-            href="https://www.instagram.com/loganwhitten512"
-          >
-            Logan Whitten
-          </a>
-        </footer>
+        <ClientFooter />
       </body>
     </html>
   );

@@ -13,7 +13,7 @@ export default function Gel() {
     setColor(searchForGel(search));
   }, [search]);
   return (
-    <div className="md:flex h-screen bg-black rounded-md p-4 place-items-center place-content-center text-xl text-white gap-5">
+    <div className="md:flex h-screen rounded-md p-4 place-items-center place-content-center text-xl text-white gap-5">
       <div className="grid items-center gap-2">
         <Label htmlFor="gel">Type a Gel Color</Label>
         <div className="flex dark">
