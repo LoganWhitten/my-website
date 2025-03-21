@@ -15,14 +15,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-lvh pb-10">
-        <div className="h-full w-screen">
-        {children}
-
-        </div>
+        <div className="h-full w-screen">{children}</div>
+        <footer className="absolute z-50 w-screen text-center flex gap-1 h-10 place-items-center place-content-center font-calendas italic text-gray-400 text-sm">
+          © {new Date().getFullYear()}
+          <a
+            className="hover:underline"
+            href="https://www.instagram.com/loganwhitten512"
+          >
+            Logan Whitten
+          </a>
+        </footer>
       </body>
-      <footer className="w-screen text-center flex gap-1 h-10 place-items-center place-content-center text-gray-500 text-sm">
-        Created very quickly by <a className="hover:underline" href="https://www.instagram.com/loganwhitten512">Logan Whitten</a>
-      </footer>
     </html>
   );
 }
