@@ -10,42 +10,42 @@ import Link from "next/link";
 
 const heroImages = [
   {
-    url: "https://loganwhitten.com/_astro/TIOY-3_Z1gRYwO.avif",
+    url: "/assets/atcprog24/atcprog-1.png",
     link: "https://unsplash.com/photos/a-black-and-white-photo-of-a-woman-brushing-her-teeth-r1SjnJL5tf0",
     title: "A Black and White Photo of a Woman Brushing Her Teeth",
   },
   {
-    url: "https://loganwhitten.com/_astro/photona24-1_Ztcvvz.avif",
+    url: "/assets/photona23/photona-3.jpg",
     link: "https://unsplash.com/photos/a-painting-of-a-palm-leaf-on-a-multicolored-background-AaNPwrSNOFE",
     title: "Neon Palm",
   },
   {
-    url: "https://loganwhitten.com/_astro/photona24-1_Ztcvvz.avif",
+    url: "/assets/bandit/bandit-4.jpg",
     link: "https://unsplash.com/photos/a-blurry-photo-of-a-crowd-of-people-UgbxzloNGsc",
     title: "A blurry photo of a crowd of people",
   },
   {
-    url: "https://loganwhitten.com/_astro/photona24-1_Ztcvvz.avif",
+    url: "/assets/photona24/photona24-1.jpeg",
     link: "https://unsplash.com/photos/rippling-crystal-blue-water-9-OCsKoyQlk",
     title: "Rippling Crystal Blue Water",
   },
   {
-    url: "https://images.unsplash.com/photo-1624344965199-ed40391d20f2?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/assets/internship/internship-1.jpg",
     link: "https://unsplash.com/de/fotos/mann-im-schwarzen-hemd-unter-blauem-himmel-m8RDNiuEXro",
     title: "Mann im schwarzen Hemd unter blauem Himmel",
   },
   {
-    url: "https://images.unsplash.com/photo-1689553079282-45df1b35741b?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/assets/fairview/fairview-1.jpeg",
     link: "https://unsplash.com/photos/a-woman-with-a-flower-crown-on-her-head-0S3muIttbsY",
     title: "A women with a flower crown on her head",
   },
   {
-    url: "https://images.unsplash.com/photo-1721968317938-cf8c60fccd1a?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/assets/cinderella/cinderella-3.jpg",
     title: "A blurry photo of white flowers in a field",
     link: "https://unsplash.com/photos/a-blurry-photo-of-white-flowers-in-a-field-6qbx0lzGPyc",
   },
   {
-    url: "https://images.unsplash.com/photo-1677338354108-223e807fb1bd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "/assets/TIOY/TIOY-4.jpg",
     link: "https://unsplash.com/photos/a-table-topped-with-two-wine-glasses-and-plates-Ig0gRAHspV0",
     title: "A table topped with two wine glasses and plates",
   },
