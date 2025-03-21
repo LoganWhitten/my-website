@@ -74,19 +74,19 @@ const Hero = () => {
         transition={{ duration: 0.88, delay: 1.5 }}
       >
         <p className="text-5xl md:text-7xl z-50 text-white font-calendas italic">
-          hey i'm logan.
+          Hey 👋 I'm Logan!
         </p>
         <div className="flex gap-4">
-            <Link href={"/resume"}>
-          <Button
-            variant="outline"
-            className="hover:bg-white hover:text-black cursor-pointer"
-            onClick={() => console.log("clicked!")}
-          >
-            Resume
-          </Button>
-            </Link>
-          <Link href="https://gel.loganwhitten.com">
+          <Link href={"/resume"}>
+            <Button
+              variant="outline"
+              className="hover:bg-white hover:text-black cursor-pointer"
+              onClick={() => console.log("clicked!")}
+            >
+              Resume
+            </Button>
+          </Link>
+          <Link href="/gel">
             <Button
               className="hover:bg-black bg-white hover:text-white text-black ouline outline-white hover:outline-white cursor-pointer"
               onClick={() => redirect("https://gel.loganwhitten.com")}
@@ -142,7 +142,7 @@ const Hero = () => {
           />
         </FloatingElement>
 
-        <FloatingElement depth={4} className="top-[73%] left-[15%]">
+        <FloatingElement depth={4} className="top-[73%] left-[25%]">
           <motion.img
             initial={{ opacity: 0 }}
             src={heroImages[5].url}
@@ -153,7 +153,7 @@ const Hero = () => {
           <motion.img
             initial={{ opacity: 0 }}
             src={heroImages[6].url}
-            className="w-24 h-24 md:w-32 md:h-32 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
+            className="w-32 h-24 md:w-32 md:h-32 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
           />
         </FloatingElement>
       </Floating>
